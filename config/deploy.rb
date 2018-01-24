@@ -12,7 +12,7 @@ require 'mina/git'
 set :application_name, 'ms'
 set :domain, '0.0.0.0'
 set :deploy_to, '/websites/appruby/acceptance'
-set :repository, 'git://...'
+set :repository, 'git@github.com:rtpr1/ms.git'
 set :branch, 'master'
 
 # Optional settings:
@@ -34,7 +34,7 @@ task :remote_environment do
   # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
- invoke :'rvm:use', 'ruby-2.4.1'
+# invoke :'rvm:use', 'ruby-2.4.1'
 end
 
 # Put any custom commands you need to run at setup
