@@ -16,7 +16,7 @@ set :repository, 'git@github.com:rtpr1/ms.git'
 set :branch, 'master'
 
 # Optional settings:
-#   set :user, 'foobar'          # Username in the server to SSH to.
+set :user, 'root'          # Username in the server to SSH to.
 set :port, '42022'           # SSH port number.
 #   set :forward_agent, true     # SSH forward_agent.
 
