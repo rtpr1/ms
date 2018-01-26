@@ -1,7 +1,9 @@
+require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
 # require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
-# require 'mina/rvm'    # for rvm support. (https://rvm.io)
+require 'mina/rvm'    # for rvm support. (https://rvm.io)
+
 
 # Basic settings:
 #   domain       - The hostname to SSH to.
@@ -10,10 +12,12 @@ require 'mina/git'
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :application_name, 'ms'
-set :domain, '0.0.0.0'
+set :domain, '192.168.10.249'
 set :deploy_to, '/websites/appruby/acceptance'
 set :repository, 'git@github.com:rtpr1/ms.git'
 set :branch, 'master'
+#set :rvm_path, '/usr/local/rvm/bin/rvm'
+set :rvm_use_path, '/usr/local/rvm/bin/rvm'
 
 # Optional settings:
 set :user, 'root'          # Username in the server to SSH to.
@@ -32,9 +36,9 @@ task :remote_environment do
   # If you're using rbenv, use this to load the rbenv environment.
   # Be sure to commit your .ruby-version or .rbenv-version to your repository.
   # invoke :'rbenv:load'
-
+ 
   # For those using RVM, use this to load an RVM version@gemset.
-# invoke :'rvm:use', 'ruby-2.4.1'
+  invoke :'rvm:use', 'ruby-2.4.1'
 end
 
 # Put any custom commands you need to run at setup
@@ -72,3 +76,4 @@ end
 # For help in making your deploy script, see the Mina documentation:
 #
 #  - https://github.com/mina-deploy/mina/tree/master/docs
+
