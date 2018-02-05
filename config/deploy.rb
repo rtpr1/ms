@@ -3,7 +3,7 @@ require 'mina/rails'
 require 'mina/git'
 # require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 require 'mina/rvm'    # for rvm support. (https://rvm.io)
-
+require 'mina/multistage'
 
 # Basic settings:
 #   domain       - The hostname to SSH to.
@@ -12,16 +12,16 @@ require 'mina/rvm'    # for rvm support. (https://rvm.io)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :application_name, 'ms'
-set :domain, '192.168.10.249'
-set :deploy_to, '/websites/appruby/acceptance'
+#set :domain, '192.168.10.249'
+#set :deploy_to, '/websites/appruby/acceptance'
 set :repository, 'git@github.com:rtpr1/ms.git'
 set :branch, 'master'
 #set :rvm_path, '/usr/local/rvm/bin/rvm'
 set :rvm_use_path, '/usr/local/rvm/bin/rvm'
 
 # Optional settings:
-set :user, 'root'          # Username in the server to SSH to.
-set :port, '42022'           # SSH port number.
+#set :user, 'root'          # Username in the server to SSH to.
+#set :port, '42022'           # SSH port number.
 #   set :forward_agent, true     # SSH forward_agent.
 
 # Shared dirs and files will be symlinked into the app-folder by the 'deploy:link_shared_paths' step.
