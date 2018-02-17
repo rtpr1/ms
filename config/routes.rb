@@ -1,4 +1,7 @@
 Ms::Application.routes.draw do
+  resources :carts
+  resources :line_items
+  resources :carts
   get 'store/index'
 
   resources :products
