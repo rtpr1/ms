@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
   has_many :line_items
 
-  befo_destroy :ensure_not_referenced_by_any_line_item
+  before_destroy :ensure_not_referenced_by_any_line_item
   def self.latest
 	Product.order(:updated_at).last
   end
@@ -21,6 +21,5 @@ class Product < ActiveRecord::Base
      errors.add(:base, 'существуют товарные позиции')
      return false
    end
- 
-
+ end
 end
